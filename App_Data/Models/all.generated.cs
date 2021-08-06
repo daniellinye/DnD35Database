@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "1fcf3be7f4974ddc")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "d1cec1e8b0bcb11c")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 
 // FILE: models.generated.cs
@@ -1285,6 +1285,67 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
 		[ImplementPropertyType("umbracoFile")]
 		public virtual string UmbracoFile => this.Value<string>("umbracoFile");
+	}
+
+	/// <summary>Forum Post</summary>
+	[PublishedModel("forumPost")]
+	public partial class ForumPost : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		public new const string ModelTypeAlias = "forumPost";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Media;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<ForumPost, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public ForumPost(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// IsPoster
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		[ImplementPropertyType("isPoster")]
+		public virtual bool IsPoster => this.Value<bool>("isPoster");
+
+		///<summary>
+		/// Origin-User: User that posted the forum post
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		[ImplementPropertyType("originUser")]
+		public virtual object OriginUser => this.Value("originUser");
+
+		///<summary>
+		/// Post
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		[ImplementPropertyType("postContent")]
+		public virtual global::System.Web.IHtmlString PostContent => this.Value<global::System.Web.IHtmlString>("postContent");
+
+		///<summary>
+		/// Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		[ImplementPropertyType("postTitle")]
+		public virtual string PostTitle => this.Value<string>("postTitle");
+
+		///<summary>
+		/// ProfilePic
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.15.1")]
+		[ImplementPropertyType("profilePic")]
+		public virtual global::Umbraco.Core.Models.MediaWithCrops ProfilePic => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("profilePic");
 	}
 
 	/// <summary>Member</summary>
